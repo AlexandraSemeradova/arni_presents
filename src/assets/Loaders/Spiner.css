@@ -1,4 +1,4 @@
-.spiner-overlay {
+.u-spiner-overlay {
   position: fixed;
   inset: 0;
   display: flex;
@@ -8,7 +8,7 @@
   z-index: 9999;
 }
 
-.spiner-overlay-modal {
+.u-spiner-overlay-modal {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -16,7 +16,7 @@
   z-index: 9999;
 }
 
-.spiner {
+.u-spiner {
   width: 32px;
   height: 32px;
   border: 3px solid #ddd;

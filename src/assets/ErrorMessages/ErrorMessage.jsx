@@ -3,12 +3,12 @@ import './ErrorMessages.css'
 
 const ErrorMessage = () => {
    return (
-    <div className="error-msg">
+    <div className="u-error-msg">
         <figure>
             <img
                 src={ErrorMessageIlustration}
                 alt="Error illustration"
-                className="error-img"
+                className="u-error-img"
             />
         </figure>
       <h1>Oops.</h1>

@@ -4,7 +4,7 @@ import "./Icons.css";
 export const InfoIcon = ({specialClass}) => {
   return (
     <>
-      <Info className={`info-icon ${specialClass || ""}`} />
+      <Info className={`u-info-icon ${specialClass || ""}`} />
     </>
   );
 }
@@ -13,7 +13,7 @@ export const InfoIcon = ({specialClass}) => {
 export const TriangleAlertIcon = ({specialClass}) => {
   return (
     <>
-      <TriangleAlert className={`triangle_alert-icon ${specialClass || ""}`} />
+      <TriangleAlert className={`u-triangle_alert-icon ${specialClass || ""}`} />
     </>
   );
 }
@@ -22,7 +22,7 @@ export const TriangleAlertIcon = ({specialClass}) => {
 export const UnplugIcon = ({specialClass}) => {
   return (
     <>
-      <Unplug className={`unplug-icon ${specialClass || ""}`} />
+      <Unplug className={`u-unplug-icon ${specialClass || ""}`} />
     </>
   );
 }
@@ -30,7 +30,7 @@ export const UnplugIcon = ({specialClass}) => {
 export const OkIcon = ({specialClass}) => {
   return (
     <>
-      <CircleCheckBig className={`ok-icon ${specialClass || ""}`} />
+      <CircleCheckBig className={`u-ok-icon ${specialClass || ""}`} />
     </>
   );
 }

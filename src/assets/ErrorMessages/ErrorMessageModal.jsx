@@ -3,12 +3,12 @@ import './ErrorMessages.css'
 
 const ErrorMessageModal = () => {
    return (
-    <div className="error-msg-modal">
+    <div className="u-error-msg-modal">
         <figure>
             <img
                 src={ErrorMessageIlustration}
                 alt="Error illustration"
-                className="error-img"
+                className="u-error-img"
             />
         </figure>
       <h1>Oops.</h1>

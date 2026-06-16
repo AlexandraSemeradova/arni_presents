@@ -2,8 +2,8 @@ import "./Spiner.css";
 
 const SpinerModal = () => {
   return (
-    <div className="spiner-overlay-modal">
-      <div className="spiner"></div>
+    <div className="u-spiner-overlay-modal">
+      <div className="u-spiner"></div>
     </div>
   );
 };

@@ -4,7 +4,7 @@ import { PrimaryButton } from "../../Buttons/Buttons";
 const NokRezervationContentModal = ({onClose}) => {
   return (
     <>
-      <TriangleAlertIcon specialClass={'modal-alert'} />
+      <TriangleAlertIcon specialClass={'u-modal-alert'} />
       <div>
         <p>Ľutujem, niečo sa pokazilo.</p>
         <p>Zopakuj svoju voľbu ešte raz.</p>

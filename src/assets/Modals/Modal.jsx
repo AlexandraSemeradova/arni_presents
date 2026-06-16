@@ -11,9 +11,9 @@ const Modal = ({ id, isChecked, setModalContentType, setIsModalOpen, isModalOpen
   if (!isModalOpen) return null;
 
   return (
-    <div className="modal-overlay">
-      <div className="modal flex gap fd-col ai-c jc-c">
-        <button className="close-btn" onClick={onClose}>×</button>
+    <div className="u-modal-overlay">
+      <div className="u-modal u-flex u-gap u-fd-col u-ai-c u-jc-c">
+        <button className="u-close-btn" onClick={onClose}>×</button>
           {/* detail about a present + reserve button */}
           {contentType === "detail" &&
             (<DetailContentModal

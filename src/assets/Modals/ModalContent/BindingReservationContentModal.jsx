@@ -11,7 +11,7 @@ const BindingReservationContentModal = ({id, currentChecked, setModalContentType
     <>
         <h2>Vyplň prosím svoj email</h2>
         <EmailInput setEmailIsValid={setEmailIsValid} />
-        <p className="small">Na tento email ti pošlem potvrdenie o&nbsp;záväznej rezervácii spolu s&nbsp;inštrukciami, pre&nbsp;jednoduchší nákup darčeka.</p>
+        <p className="u-small">Na tento email ti pošlem potvrdenie o&nbsp;záväznej rezervácii spolu s&nbsp;inštrukciami, pre&nbsp;jednoduchší nákup darčeka.</p>
         <PrimaryButton
           text={"Záväzne rezervovať"}
           onClick={() => bindingReservePresent(id, currentChecked, setModalContentType, isModalOpen, setIsModalOpen)}

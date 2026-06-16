@@ -9,15 +9,15 @@ function EmailInput({ onChange, setEmailIsValid }) {
 
   const normalizeEmail = (raw) => {
     return raw
-      .trim()                 // odstráni medzery na začiatku/konci
-      .replace(/\s+/g, "");   // odstráni medzery aj uprostred
+      .trim()
+      .replace(/\s+/g, "");
   };
 
   const handleChange = (e) => {
     const raw = e.target.value;
     const cleaned = normalizeEmail(raw);
 
-    setValue(raw); // zobrazujeme to, čo píše user (aj s medzerami)
+    setValue(raw);
 
     if (!cleaned) {
       setError("Email je povinný.");
@@ -38,12 +38,11 @@ function EmailInput({ onChange, setEmailIsValid }) {
 
   const handleBlur = () => {
     const cleaned = normalizeEmail(value);
-    setValue(cleaned); // po opustení inputu automaticky opravíme
+    setValue(cleaned);
   };
 
   return (
     <div>
-      {/* <label htmlFor="email">Email</label> */}
       <input
         id="email"
         type="email"
@@ -54,10 +53,10 @@ function EmailInput({ onChange, setEmailIsValid }) {
         onChange={handleChange}
         onBlur={handleBlur}
         aria-invalid={!!error}
-        aria-describedby={error ? "email-error" : undefined}
+        aria-describedby={error ? "u-email-error" : undefined}
       />
       {error && (
-        <span id="email-error">
+        <span id="u-email-error">
           {error}
         </span>
       )}

@@ -25,12 +25,12 @@ const DetailContentModal = ({id, isChecked, setModalContentType, isModalOpen, se
         serverStatusModal === 'OK'
         ?
         <>
-          <figure className="shadow padding rounded">
+          <figure className="u-shadow u-padding u-rounded">
             <img src={present.img_path} alt={present.name} />
           </figure>
-        <div className="flex fd-col ai-c jc-c">
-          <h2 className="bold">{present.name}</h2>
-          <p>Dostupné na: <a href={present.link} target="_blank" rel="noopener noreferrer" className="primaryLink">{present.mall}</a></p>
+        <div className="u-flex u-fd-col u-ai-c u-jc-c">
+          <h2 className="u-bold">{present.name}</h2>
+          <p>Dostupné na: <a href={present.link} target="_blank" rel="noopener noreferrer" className="u-primaryLink">{present.mall}</a></p>
         </div>
         {isChecked=== false ? <PrimaryButton
                                 key={id}

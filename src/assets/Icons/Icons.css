@@ -1,4 +1,4 @@
-.info-icon {
+.u-info-icon {
     background:#1e6bff; 
     border-radius:50%; 
     color: #fff; 
@@ -6,17 +6,17 @@
     cursor: pointer;
 }
 
-.info-icon:hover {
+.u-info-icon:hover {
     background: #1554cc
 }
 
-.modal-alert {
+.u-modal-alert {
     color: red;
     height: 40px;
     width: 40px;
 }
 
-.modal-ok {
+.u-modal-ok {
     color: #1e6bff;
     height: 40px;
     width: 40px;
