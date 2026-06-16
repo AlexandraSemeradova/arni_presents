@@ -1,0 +1,40 @@
+.pseudotable {
+    display: flex;
+    flex-direction: column;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.pseudotable li {
+  display: flex;
+  border-bottom: 1px solid #bdbdbd;
+  min-height: 3.5rem;
+}
+
+.pseudotable li.status-true {
+    opacity: 0.6;
+    background: #e6e6e6;
+}
+
+.pseudotable .cell {
+    display: flex;
+    flex: 1 1 200px;
+    padding: .5rem;
+}
+
+.pseudotable .cell-1 {
+    min-width: 80px;
+}
+.pseudotable .cell-2 {
+    min-width: 50px;
+}
+.pseudotable .cell-3 {
+    min-width: 60px;
+}
+.pseudotable .cell-4 {
+    min-width: 50px;
+}
+.pseudotable .cell-5 {
+    min-width: 80px;
+}

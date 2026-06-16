@@ -1,0 +1,102 @@
+/* images */
+figure {
+  /* width: 180px; */
+  /* width: 100%; */
+  max-width: 250px;
+  min-width: 150px;
+}
+
+img {
+  width: 100%;
+}
+
+/* text */
+.txt-green {
+  color: #0fbb0f;
+}
+
+.bold {
+  font-weight: 600;
+}
+
+/* flex */
+.flex {
+  display: flex;
+}
+
+.fd-col {
+  flex-direction: column;
+}
+
+.jc-c {
+  justify-content: center;
+}
+
+.ai-c {
+  align-items: center;
+}
+
+/* titles */
+h1 {
+  font-size: 1.8rem;
+  line-height: 2.7rem;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+h2 {
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+h3 {
+  font-size: 1.6rem;
+  line-height: 2.4rem;
+  font-weight: 500;
+  margin-bottom: 0.2rem;
+}
+
+h4 {
+  font-size: 1.1rem;
+  line-height: 1.65rem;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+
+h5 {
+  font-size: 0.9rem;
+  line-height: 1.35rem;
+  margin-bottom: .3rem;
+}
+
+.small {
+  font-size: 0.8rem;
+  line-height: 1.2rem;
+}
+
+/* gap/margin/padding */
+.gap {
+  gap: 1rem;
+}
+
+.padding {
+  padding: 1rem;
+}
+
+/* links */
+.primaryLink {
+  color: #1e6bff;
+}
+.primaryLink:hover {
+  color: #1554cc;
+}
+
+/* shadow */
+.shadow {
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+}
+
+/* rounded */
+.rounded {
+  border-radius: 1rem;
+}

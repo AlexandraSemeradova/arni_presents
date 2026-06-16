@@ -1,0 +1,23 @@
+.info-icon {
+    background:#1e6bff; 
+    border-radius:50%; 
+    color: #fff; 
+    border: none;
+    cursor: pointer;
+}
+
+.info-icon:hover {
+    background: #1554cc
+}
+
+.modal-alert {
+    color: red;
+    height: 40px;
+    width: 40px;
+}
+
+.modal-ok {
+    color: #1e6bff;
+    height: 40px;
+    width: 40px;
+}

@@ -1,0 +1,31 @@
+input[type="email"] {
+  width: 100%;
+  padding: 10px 14px;
+  font-size: 16px;
+  border: 1px solid #d0d0d0;
+  border-radius: 6px;
+  background: #fafafa;
+  color: #222;
+  outline: none;
+  transition: border-color 0.15s ease, background 0.15s ease;
+}
+
+input[type="email"]:focus {
+  border-color: #4a7aff;
+  background: #fff;
+}
+
+input[type="email"][aria-invalid="true"] {
+  border-color: #e63946;
+}
+
+label {
+  font-size: 14px;
+  color: #444;
+  margin-bottom: 4px;
+}
+
+#email-error {
+  color: #e63946;
+  font-size: 13px;
+}
