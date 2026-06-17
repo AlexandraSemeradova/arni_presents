@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
-import { subscribeToPresentById } from "../../../utils/services";
-import { reservePresent } from "../../../utils/functions";
+import { subscribeToPresentById } from "../../../../core/servises/PresentServices";
+import { reservePresent } from "../../../../utils/functions";
 import { PrimaryButton } from "../../Buttons/Buttons";
 import SpinerModal from "../../Loaders/SpinerModal";
 import ErrorMessageModal from "../../ErrorMessages/ErrorMessageModal";

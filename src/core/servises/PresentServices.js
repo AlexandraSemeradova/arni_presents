@@ -1,6 +1,6 @@
-import { db } from "../firebase";
+import { db } from "../firebase/firebase";
 import { onValue, ref, get, update, set, push } from "firebase/database";
-import { isObject } from "./functions";
+import { isObject } from "../../utils/functions";
 
 // REALTIME LISTENER FOR ALL PRESENTS
 export function subscribeToPresents(callback) {

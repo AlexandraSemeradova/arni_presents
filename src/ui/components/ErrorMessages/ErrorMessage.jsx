@@ -1,4 +1,4 @@
-import ErrorMessageIlustration from '../../images/error_ilustration.png';
+import ErrorMessageIlustration from '../../../assets/images/error_ilustration.png';
 import './ErrorMessages.css'
 
 const ErrorMessage = () => {

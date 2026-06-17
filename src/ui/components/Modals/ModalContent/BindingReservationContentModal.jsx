@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { PrimaryButton } from "../../Buttons/Buttons";
-import {bindingReservePresent} from "../../../utils/functions";
+import {bindingReservePresent} from "../../../../utils/functions";
 import EmailInput from "../../Inputs/Inputs";
 
 const BindingReservationContentModal = ({id, currentChecked, setModalContentType, isModalOpen, setIsModalOpen}) => {

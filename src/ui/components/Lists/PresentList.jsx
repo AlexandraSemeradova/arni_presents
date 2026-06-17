@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react';
-// import { getAllPresents } from '../../utils/services';
-import { reservePresent } from '../../utils/functions';
+import { reservePresent } from '../../../utils/functions';
 import {InfoIcon} from '../Icons/Icons';
 import { PrimaryButton } from '../Buttons/Buttons';
 import './PresentList.css';

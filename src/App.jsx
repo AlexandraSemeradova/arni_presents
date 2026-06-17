@@ -1,11 +1,9 @@
 import { useEffect, useState } from "react";
-import { db } from "./firebase";
-import { ref, onValue, update } from "firebase/database";
-import { getAllPresents, subscribeToPresents } from "./utils/services";
-import Spiner from "./assets/Loaders/Spiner";
-import Modal from "./assets/Modals/Modal";
-import ErrorMessage from "./assets/ErrorMessages/ErrorMessage";
-import PresentList from "./assets/Lists/PresentList";
+import { subscribeToPresents } from "./core/servises/PresentServices";
+import Spiner from "./ui/components/Loaders/Spiner";
+import Modal from "./ui/components/Modals/Modal";
+import ErrorMessage from "./ui/components/ErrorMessages/ErrorMessage";
+import PresentList from "./ui/components/Lists/PresentList";
 import './App.css'
 
 export default function App() {
@@ -19,8 +17,6 @@ export default function App() {
       useEffect(() => {
         const unsubscribe = subscribeToPresents((result) => {
           const {status, data} = result;
-          // console.log('status');
-          // console.log(status);
           setServerStatus(status)
           setAllPresents(data);
         });

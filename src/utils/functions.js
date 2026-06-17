@@ -1,6 +1,6 @@
-import { db } from "../firebase";
+import { db } from "../core/firebase/firebase";
 import { ref, update } from "firebase/database";
-import { togglePresent } from "./services";
+import { togglePresent } from "../core/servises/PresentServices";
 
 export const reservePresent = (currentChecked, setModalContentType, isModalOpen, setIsModalOpen) => {
     console.log('reserve_present')
