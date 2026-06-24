@@ -1,5 +1,5 @@
 import { useState } from "react";
-import "./Inputs.css"
+import "./Inputs.css";
 
 function EmailInput({ onChange, setEmailIsValid }) {
   const [value, setValue] = useState("");

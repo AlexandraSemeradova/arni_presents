@@ -1,4 +1,4 @@
-import { Info, TriangleAlert, Unplug, CircleCheckBig } from "lucide-react";
+import { Info, TriangleAlert, Unplug, CircleCheckBig, ImageOff } from "lucide-react";
 import "./Icons.css";
 
 export const InfoIcon = ({specialClass}) => {
@@ -9,7 +9,6 @@ export const InfoIcon = ({specialClass}) => {
   );
 }
 
-
 export const TriangleAlertIcon = ({specialClass}) => {
   return (
     <>
@@ -17,7 +16,6 @@ export const TriangleAlertIcon = ({specialClass}) => {
     </>
   );
 }
-
 
 export const UnplugIcon = ({specialClass}) => {
   return (
@@ -31,6 +29,14 @@ export const OkIcon = ({specialClass}) => {
   return (
     <>
       <CircleCheckBig className={`u-ok-icon ${specialClass || ""}`} />
+    </>
+  );
+}
+
+export const NoImageIcon = ({specialClass}) => {
+  return (
+    <>
+      <ImageOff className={`u-no-image-icon ${specialClass || ""}`} />
     </>
   );
 }

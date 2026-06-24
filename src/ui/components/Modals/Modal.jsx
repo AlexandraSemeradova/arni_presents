@@ -14,7 +14,7 @@ const Modal = ({ id, isChecked, setModalContentType, setIsModalOpen, isModalOpen
     <div className="u-modal-overlay">
       <div className="u-modal u-flex u-gap u-fd-col u-ai-c u-jc-c">
         <button className="u-close-btn" onClick={onClose}>×</button>
-          {/* detail about a present + reserve button */}
+          {/* Detail about a present + reserve button */}
           {contentType === "detail" &&
             (<DetailContentModal
                 id={id}
@@ -24,7 +24,7 @@ const Modal = ({ id, isChecked, setModalContentType, setIsModalOpen, isModalOpen
                 setIsModalOpen={setIsModalOpen}
               />)  
           }
-          {/* email + firm reservation button */}
+          {/* Email + firm reservation button */}
           {contentType === "bindingReservation" &&
             (<BindingReservationContentModal
                 id={id}
@@ -33,10 +33,13 @@ const Modal = ({ id, isChecked, setModalContentType, setIsModalOpen, isModalOpen
                 isModalOpen={isModalOpen}
                 setIsModalOpen={setIsModalOpen}
               />)
-          }   
-          {contentType === "alreadyReserved" && (<AlreadyReservedContentModal onClose={onClose}/>)}         {/* already reserved message */}
-          {contentType === "okReservation" && (<OkReservationContentModal onClose={onClose} />)}             {/* Thank You */}
-          {contentType === "nokReservation" && (<NokReservationContentModal onClose={onClose}/>)}           {/* Somethig Is Wrong */}
+          }
+          {/* Already reserved message */}
+          {contentType === "alreadyReserved" && (<AlreadyReservedContentModal onClose={onClose}/>)}
+          {/* Thank You */}
+          {contentType === "okReservation" && (<OkReservationContentModal onClose={onClose} />)}
+          {/* Somethig is Wrong */}
+          {contentType === "nokReservation" && (<NokReservationContentModal onClose={onClose}/>)}
       </div>
     </div>
   );

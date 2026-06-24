@@ -1,55 +1,74 @@
 import { useState, useEffect } from "react";
 import { subscribeToPresentById } from "../../../../core/servises/PresentServices";
-import { reservePresent } from "../../../../utils/functions";
+import { isObject, transformObjToArray, normalizeBoolean, normalizeString } from "../../../../utils/helpers";
+import { reservePresent } from "../../../../utils/actions";
 import { PrimaryButton } from "../../Buttons/Buttons";
+import { PrimaryLink } from "../../Links/Links";
+import { NoImageIcon } from "../../Icons/Icons";
 import SpinerModal from "../../Loaders/SpinerModal";
 import ErrorMessageModal from "../../ErrorMessages/ErrorMessageModal";
+import NothingToShow from "../../NothingToShow/NothingToShow";
 
 const DetailContentModal = ({id, isChecked, setModalContentType, isModalOpen, setIsModalOpen}) => {
-  const [present, setPresent] = useState(null);
+  const [present, setPresent] = useState({});
   const [serverStatusModal, setServerStatusModal] = useState(null);
+  const [isModalLoader, setIsModalLoader] = useState(true);
 
    useEffect(() => {
+    // setIsModalLoader(true);
     const unsubscribe = subscribeToPresentById(id, (result) => {
       const {status, data} = result;
       setServerStatusModal(status);
       setPresent(data);
+      setIsModalLoader(false);
     });
 
     return () => unsubscribe();
   }, [id]);
 
+  const safePresent = isObject(present) ? present : {};
+  
   return (
     <>
-      {present !== null ?
-        serverStatusModal === 'OK'
-        ?
-        <>
-          <figure className="u-shadow u-padding u-rounded">
-            <img src={present.img_path} alt={present.name} />
-          </figure>
-        <div className="u-flex u-fd-col u-ai-c u-jc-c">
-          <h2 className="u-bold">{present.name}</h2>
-          <p>Dostupné na: <a href={present.link} target="_blank" rel="noopener noreferrer" className="u-primaryLink">{present.mall}</a></p>
-        </div>
-        {isChecked=== false ? <PrimaryButton
-                                key={id}
-                                onClick={() => reservePresent(isChecked, setModalContentType, isModalOpen, setIsModalOpen)}
-                                text='Vybrať'
-                              />
-                              :
-                              <></>
-        }
-        </>
-        :
-        <>
-          <ErrorMessageModal />
-        </>
-      :
-      <>
-        <SpinerModal />
-      </>
-      }
+      {(isModalLoader) && (<SpinerModal />)}
+      {(!isModalLoader && serverStatusModal === "ERROR") && (<ErrorMessageModal />)}
+      {(serverStatusModal === "NO_CONTENT" || safePresent.length === 0) && <NothingToShow tag={"div"} message={"Žiadne položky na zobrazenie."} />}
+     {(serverStatusModal === "OK" || safePresent.length !== 0) && (
+        (() => {
+          const { img_path, name, link, mall, isChecked } = safePresent;
+
+          console.log(img_path);
+
+          const sImgPath = normalizeString(img_path) || "";
+          const sName = normalizeString(name) || "Bez mena";
+          const sLink = normalizeString(link) || "";
+          const sMall = normalizeString(mall) || "Nie je možné presmerovať na obchod.";
+          const sIsChecked = normalizeBoolean(isChecked);
+
+          console.log(sImgPath);
+
+          return (
+            <div className="u-flex u-fd-col u-ai-c u-jc-c u-gap">
+              <figure className="u-shadow u-padding u-rounded">
+                {sImgPath && <img src={sImgPath} alt={sName} />}
+                {!sImgPath && <NoImageIcon />}
+              </figure>
+              <div className="u-flex u-fd-col u-ai-c u-jc-c">
+                <h2 className="u-bold">{sName}</h2>
+                <p> Dostupné na:{" "}
+                  {sLink && <PrimaryLink link={sLink} target="_blank" rel="noopener noreferrer" specialClass="u-primaryLink" text={sMall} />}
+                  {!sLink && sMall}
+                </p>
+              </div>
+              {!sIsChecked && (
+                <PrimaryButton onClick={() => reservePresent(sIsChecked, setModalContentType, isModalOpen, setIsModalOpen)}
+                  text="Vybrať"
+                />
+              )}
+            </div>
+          );
+        })()
+      )}
     </>
   );
 }

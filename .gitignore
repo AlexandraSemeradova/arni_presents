@@ -25,3 +25,6 @@ dist-ssr
 
 # ENV
 .env
+
+# TEST DATA
+.json

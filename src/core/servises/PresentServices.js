@@ -1,91 +1,89 @@
 import { db } from "../firebase/firebase";
 import { onValue, ref, get, update, set, push } from "firebase/database";
-import { isObject } from "../../utils/functions";
+import { isObject } from "../../utils/helpers";
 
 // REALTIME LISTENER FOR ALL PRESENTS
 export function subscribeToPresents(callback) {
-  const presentsRef = ref(db, "arniPresents");
-
-  return onValue(presentsRef, (snapshot) => {
-    callback(snapshot.exists() ? {status: 'OK', data:snapshot.val()} : {status:'NOK', data: {}});
-  });
+  const presentRef = ref(db, "arniPresents");
+  return onValue(presentRef,(snapshot) => {
+    try {
+      const exists = snapshot.exists();
+      if (!exists) {
+        throw new Error('Servise: Data does not exist.');
+      }
+      callback({status: "OK", data: snapshot.val()});
+    }
+    catch (error) {
+      console.error(error.message)
+      callback({status: "NO_CONTENT", data: []});
+    }
+  },
+  (error) => {
+    console.error('Servise: Endpoint is not valid or other server/backend error. Check rules in firebase.');
+    callback({status: "ERROR", data: [], error: error.message});
+  }
+  );
 }
 
 // REALTIME LISTENER FOR ONE PRESENT - ID
 export function subscribeToPresentById(id, callback) {
-  const itemRef = ref(db, `arniPresents/${id - 1}`);
+  console.log(`servise ${id}`);
+  const presentRef = ref(db, `arniPresents/${id - 1}`);
 
-  return onValue(itemRef, (snapshot) => {
-    callback(snapshot.exists() ? {status: 'OK', data:snapshot.val()} : {status:'NOK', data: {}});
-  });
+  return onValue(presentRef, (snapshot) => {
+    try {
+      const exists = snapshot.exists();
+      if (!exists) {
+        throw new Error('Servise: Object does not exist.');
+      }
+      callback({status: "OK", data: snapshot.val()});
+    }
+    catch (error) {
+      console.error(error.message)
+      callback({status: "NO_CONTENT", data: {}});
+    }
+  },
+    (error) => {
+      console.error('Servise: Endpoint is not valid or other server/backend error. Check rules in firebase.');
+      callback({status: "ERROR", data: {}, error: error.message});
+    }
+  );
 }
 
-// GET ALL
-export async function getAllPresents() {
+// GET ALL (no listener)
+export async function getAllPresents(callback) {
   try {
     const snapshot = await get(ref(db, "arniPresents"));
+
     if (!snapshot.exists()) {
-      console.error('Servise: Endpoint is not valid.');
-      return {
-        status: 404,
-        data: null
-      };
-    } else {
-        const data = snapshot.val();
-        console.log(typeof data);
-        if (isObject(data)) {
-          return {
-              status: 404,
-              data: null
-            };
-        } else {
-          return {
-            status: 200,
-            data: snapshot.val()
-          };
-        }
+      console.error("Service: Data does not exist.");
+      return callback({ status: "NO_CONTENT", data: [] });
     }
+
+    return callback({ status: "OK", data: snapshot.val() });
+
   } catch (error) {
-      console.error('Servise: Server/Firebase error.');
-      return {
-        status: 500,
-        error: error.message
-      };
+    console.error("Service: Server/Firebase error.", error.message);
+    return callback({ status: "ERROR", data: [], error: error.message });
   }
 }
 
 // GET ONE
 export async function getPresentById(id) {
-  try{
+  try {
     const snapshot = await get(ref(db, `arniPresents/${id - 1}`));
-     if (!snapshot.exists()) {
-      console.error('Servise: Endpoint is not valid.');
-      return {
-        status: 404,
-        data: null
-      };
-    } else {
-        const data = snapshot.val();
-        if (data === null || data !== "object") {
-          return {
-              status: 404,
-              data: null
-            };
-        } else {
-          return {
-            status: 200,
-            data: snapshot.val()
-          };
-        }
+
+    if (!snapshot.exists()) {
+      console.error("Service: Data does not exist.");
+      return callback({ status: "NO_CONTENT", data: {} });
     }
+
+    return callback({ status: "OK", data: snapshot.val() });
+
   } catch (error) {
-      console.error('Servise: Server/Firebase error.');
-      return {
-        status: 500,
-        error: error.message
-      };
+    console.error("Service: Server/Firebase error.", error.message);
+    return callback({ status: "ERROR", data: {}, error: error.message });
   }
-  // return snapshot.exists() ? snapshot.val() : null;
 }
 
 // CREATE
@@ -95,12 +93,12 @@ export async function createPresent(data) {
     await set(newRef, data);
 
     return {
-      status: 200,
+      status: "OK",
       data: { id: newRef.key }
     };
 
   } catch (error) {
-    return { status: 500, error: error.message };
+    return { status: "ERROR", error: error.message };
   }
 }
 
@@ -110,12 +108,12 @@ export async function updatePresent(id, data) {
     await update(ref(db, `arniPresents/${id - 1}`), data);
 
     return {
-      status: 200,
+      status: "OK",
       data: { updated: true }
     };
 
   } catch (error) {
-    return { status: 500, error: error.message };
+    return { status: "ERROR", error: error.message };
   }
 }
 
@@ -127,11 +125,11 @@ export async function togglePresent(id, isChecked) {
     });
 
     return {
-      status: 200,
+      status: "OK",
       data: { toggled: true }
     };
 
   } catch (error) {
-    return { status: 500, error: error.message };
+    return { status: "ERROR", error: error.message };
   }
 }

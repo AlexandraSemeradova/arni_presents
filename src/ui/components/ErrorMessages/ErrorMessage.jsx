@@ -1,5 +1,5 @@
-import ErrorMessageIlustration from '../../../assets/images/error_ilustration.png';
-import './ErrorMessages.css'
+import ErrorMessageIlustration from "../../../assets/images/error_ilustration.png";
+import "./ErrorMessages.css";
 
 const ErrorMessage = () => {
    return (
@@ -17,6 +17,5 @@ const ErrorMessage = () => {
     </div>
   );
 }
-
 
 export default ErrorMessage;
