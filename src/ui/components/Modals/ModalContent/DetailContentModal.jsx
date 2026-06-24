@@ -15,7 +15,6 @@ const DetailContentModal = ({id, isChecked, setModalContentType, isModalOpen, se
   const [isModalLoader, setIsModalLoader] = useState(true);
 
    useEffect(() => {
-    // setIsModalLoader(true);
     const unsubscribe = subscribeToPresentById(id, (result) => {
       const {status, data} = result;
       setServerStatusModal(status);
@@ -35,17 +34,14 @@ const DetailContentModal = ({id, isChecked, setModalContentType, isModalOpen, se
       {(serverStatusModal === "NO_CONTENT" || safePresent.length === 0) && <NothingToShow tag={"div"} message={"Žiadne položky na zobrazenie."} />}
      {(serverStatusModal === "OK" || safePresent.length !== 0) && (
         (() => {
-          const { img_path, name, link, mall, isChecked } = safePresent;
 
-          console.log(img_path);
+          const { img_path, name, link, mall, isChecked } = safePresent;
 
           const sImgPath = normalizeString(img_path) || "";
           const sName = normalizeString(name) || "Bez mena";
           const sLink = normalizeString(link) || "";
           const sMall = normalizeString(mall) || "Nie je možné presmerovať na obchod.";
           const sIsChecked = normalizeBoolean(isChecked);
-
-          console.log(sImgPath);
 
           return (
             <div className="u-flex u-fd-col u-ai-c u-jc-c u-gap">
