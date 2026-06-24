@@ -1,17 +1,12 @@
 import { useState } from "react";
+import { normalizeEmail } from "../../../utils/helpers";
 import "./Inputs.css";
 
-function EmailInput({ onChange, setEmailIsValid }) {
+function EmailInput({ onChange, setEmailIsValid, setEmail }) {
   const [value, setValue] = useState("");
   const [error, setError] = useState("");
 
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
-
-  const normalizeEmail = (raw) => {
-    return raw
-      .trim()
-      .replace(/\s+/g, "");
-  };
 
   const handleChange = (e) => {
     const raw = e.target.value;
@@ -39,6 +34,7 @@ function EmailInput({ onChange, setEmailIsValid }) {
   const handleBlur = () => {
     const cleaned = normalizeEmail(value);
     setValue(cleaned);
+    setEmail(cleaned);
   };
 
   return (

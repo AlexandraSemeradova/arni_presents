@@ -17,3 +17,9 @@ export const transformObjToArray = (array, item) => [...array, item];
 
 export const isStringBlank = value =>
   typeof value === 'string' && value.trim().length === 0;
+
+export const normalizeEmail = (raw) => {
+    return raw
+      .trim()
+      .replace(/\s+/g, "");
+  };
