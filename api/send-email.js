@@ -15,7 +15,7 @@ export default async function handler(req, res) {
 
   try {
     await resend.emails.send({
-      from: "Arni Present <noreply@tvoja-domena.com>",
+      from: "onboarding@resend.dev",
       to: email,
       subject: `🎁 Rezervácia darčeka: ${presentName}`,
       html: `

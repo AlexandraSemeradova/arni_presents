@@ -11,8 +11,9 @@ const BindingReservationContentModal = ({id, currentChecked, setModalContentType
 const bindingReservePresent = async (id, currentChecked, setModalContentType, isModalOpen, setIsModalOpen) => {
   if (currentChecked === false) {
     togglePresent(id, currentChecked).then(async result => {
-      const { status, presentData } = result; // ← presentData musí vrátiť togglePresent
+      const { status, data } = result; // ← presentData musí vrátiť togglePresent
 
+      console.log(result.data.presentData);
     //   const presentData = {name: 'DARCEK', link: 'LINK', mall: 'MALL', price: 'PRICE'}
 
       if (status === "OK") {
@@ -23,10 +24,10 @@ const bindingReservePresent = async (id, currentChecked, setModalContentType, is
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({
               email,
-              presentName: presentData.name,
-              presentLink: presentData.link,
-              presentMall: presentData.mall,
-              presentPrice: presentData.price,
+              presentName: data.presentData.name || "Bez mena: chyba!",
+              presentLink: data.presentData.link || "Bez linku: chyba!",
+              presentMall: data.presentData.mall || "Bez názvu obchodu: chyba!",
+              presentPrice: data.presentData.price || "Bez ceny: chyba!",
             }),
           });
         } catch (err) {

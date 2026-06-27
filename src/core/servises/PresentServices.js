@@ -148,9 +148,7 @@ export async function togglePresent(id, isChecked) {
 
     return {
       status: "OK",
-      data: {
-        present: presentData  // ← name, link, mall, price
-      }
+      data: {presentData}
     };
 
   } catch (error) {
