@@ -8,36 +8,46 @@ const BindingReservationContentModal = ({id, currentChecked, setModalContentType
   const [email, setEmail] = useState("");
   const [emailIsValid, setEmailIsValid] = useState(false);
 
- const bindingReservePresent = async (id, currentChecked, setModalContentType, isModalOpen, setIsModalOpen) => {  
-  if(currentChecked === false) {   
-      togglePresent(id, currentChecked).then(async result => {
-          const {status} = result;
+const bindingReservePresent = async (id, currentChecked, setModalContentType, isModalOpen, setIsModalOpen) => {
+  if (currentChecked === false) {
+    togglePresent(id, currentChecked).then(async result => {
+      const { status, presentData } = result; // ← presentData musí vrátiť togglePresent
 
-          if (status === "OK") {
-            console.log(email);
-              await fetch("/api/sendReservationEmail", {
-                  method: "POST",
-                  headers: { "Content-Type": "application/json" },
-                  body: JSON.stringify({
-                      email: email,
-                      presentName: 'AHOJ'
-                  })
-              });
+    //   const presentData = {name: 'DARCEK', link: 'LINK', mall: 'MALL', price: 'PRICE'}
 
-              setModalContentType("okReservation");
-              if(!isModalOpen) setIsModalOpen(true);
-          }
+      if (status === "OK") {
+        // Odoslanie emailu
+        try {
+          await fetch("/api/send-email", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+              email,
+              presentName: presentData.name,
+              presentLink: presentData.link,
+              presentMall: presentData.mall,
+              presentPrice: presentData.price,
+            }),
+          });
+        } catch (err) {
+          console.error("Email sa nepodarilo odoslať:", err);
+          // Email zlyhá potichu — rezervácia je stále OK
+        }
 
-          if (status === "ERROR") {
-              setModalContentType("nokReservation");
-              if(!isModalOpen) setIsModalOpen(true);
-          }
-      })
+        setModalContentType("okReservation");
+        if (!isModalOpen) setIsModalOpen(true);
+      }
+
+      if (status === "ERROR") {
+        setModalContentType("nokReservation");
+        if (!isModalOpen) setIsModalOpen(true);
+      }
+    });
   } else {
-      setModalContentType("alreadyReserved");
-      if(!isModalOpen) setIsModalOpen(true);
+    setModalContentType("alreadyReserved");
+    if (!isModalOpen) setIsModalOpen(true);
   }
-}
+};
 
   return (
     <>

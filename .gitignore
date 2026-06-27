@@ -25,6 +25,9 @@ dist-ssr
 
 # ENV
 .env
+.env*
 
 # TEST DATA
 .json
+.vercel
+

@@ -118,15 +118,39 @@ export async function updatePresent(id, data) {
 }
 
 // TOGGLE CHECK
+// export async function togglePresent(id, isChecked) {
+//   try {
+//     await update(ref(db, `arniPresents/${id - 1}`), {
+//       isChecked: !isChecked,
+//     });
+
+//     return {
+//       status: "OK",
+//       data: { toggled: true }
+//     };
+
+//   } catch (error) {
+//     return { status: "ERROR", error: error.message };
+//   }
+// }
+
 export async function togglePresent(id, isChecked) {
   try {
-    await update(ref(db, `arniPresents/${id - 1}`), {
+    const presentRef = ref(db, `arniPresents/${id - 1}`);
+
+    // Najprv fetchneme aktuálne dáta darčeka
+    const snapshot = await get(presentRef);
+    const presentData = snapshot.val();
+
+    await update(presentRef, {
       isChecked: !isChecked,
     });
 
     return {
       status: "OK",
-      data: { toggled: true }
+      data: {
+        present: presentData  // ← name, link, mall, price
+      }
     };
 
   } catch (error) {
