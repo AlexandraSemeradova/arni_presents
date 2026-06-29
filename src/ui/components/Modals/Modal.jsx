@@ -1,14 +1,17 @@
 
-import { useState } from "react";
+import {useState } from "react";
 import DetailContentModal from "./ModalContent/DetailContentModal";
 import AlreadyReservedContentModal from "./ModalContent/AlreadyReservedContentModal";
 import BindingReservationContentModal from "./ModalContent/BindingReservationContentModal";
-import OkReservationContentModal from "./ModalContent/OkReservationContentModal"
-import NokReservationContentModal from "./ModalContent/NokReservationContentModal"
+import OkReservationContentModal from "./ModalContent/OkReservationContentModal";
+import NokReservationContentModal from "./ModalContent/NokReservationContentModal";
+import OkReservationEmailFailContentModal from "./ModalContent/OkReservationEmailFailContentModal";
 import "./Modal.css";
 
 const Modal = ({ id, isChecked, setModalContentType, setIsModalOpen, isModalOpen, onClose, contentType }) => {
   if (!isModalOpen) return null;
+
+  const [finalData, setFinalData] = useState({});
 
   return (
     <div className="u-modal-overlay">
@@ -32,13 +35,16 @@ const Modal = ({ id, isChecked, setModalContentType, setIsModalOpen, isModalOpen
                 setModalContentType={setModalContentType}
                 isModalOpen={isModalOpen}
                 setIsModalOpen={setIsModalOpen}
+                setFinalData={setFinalData}
               />)
           }
           {/* Already reserved message */}
           {contentType === "alreadyReserved" && (<AlreadyReservedContentModal onClose={onClose}/>)}
-          {/* Thank You */}
-          {contentType === "okReservation" && (<OkReservationContentModal onClose={onClose} />)}
-          {/* Somethig is Wrong */}
+          {/* Thank You - all correct */}
+          {contentType === "okReservation" && (<OkReservationContentModal onClose={onClose} finalData={finalData} />)}
+          {/* Thank You - reservation ok, but no Email*/}
+          {contentType === "okReservationEmailFail" && (<OkReservationEmailFailContentModal onClose={onClose} finalData={finalData} />)}
+          {/* Something Went Wrong - all bad */}
           {contentType === "nokReservation" && (<NokReservationContentModal onClose={onClose}/>)}
       </div>
     </div>

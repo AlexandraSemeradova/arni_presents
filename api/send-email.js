@@ -21,27 +21,43 @@ export default async function handler(req, res) {
         to: [{ email }],
         subject: `🎁 Rezervácia darčeka: ${presentName}`,
         htmlContent: `
-          <div style="font-family: sans-serif; max-width: 600px; margin: 0 auto;">
-            <h1>Ďakujeme za rezerváciu! 🎉</h1>
-            <p>Úspešne si si rezervoval/a darček pre Arnolda:</p>
-            
-            <div style="background: #f5f5f5; padding: 20px; border-radius: 8px; margin: 20px 0;">
-              <h2 style="margin: 0 0 10px 0;">${presentName}</h2>
-              <p style="margin: 5px 0;">🏪 <strong>Obchod:</strong> ${presentMall}</p>
-              <p style="margin: 5px 0;">💰 <strong>Cena:</strong> ${presentPrice} €</p>
-            </div>
+        <div style="font-family: Arial, sans-serif; max-width: 560px; margin: 0 auto; padding: 24px 0; color: #1a1a18;">
+          <p style="font-size: 12px; color: #888780; margin: 0 0 32px 0; letter-spacing: 0.05em; text-transform: uppercase;">
+            Arni Present
+          </p> 
 
-            <a href="${presentLink}" 
-               style="display: inline-block; background: #4CAF50; color: white; 
-                      padding: 12px 24px; border-radius: 6px; text-decoration: none;
-                      font-weight: bold; margin: 10px 0;">
-              🛒 Kúpiť darček
-            </a>
+          <h1 style="font-size: 22px; font-weight: 500; margin: 0 0 8px 0;">Rezervácia potvrdená! 🎉</h1>
+          <p style="font-size: 15px; color: #5f5e5a; margin: 0 0 32px 0;">
+            Úspešne si si rezervoval/a darček pre Arnolda.
+          </p>
 
-            <p style="color: #888; font-size: 12px; margin-top: 30px;">
-              Arni Present • Zoznam darčekov pre Arnolda
-            </p>
+          <div style="border-top: 1px solid #e5e4de; border-bottom: 1px solid #e5e4de; padding: 20px 0;">
+            <table style="width: 100%; border-collapse: collapse; font-size: 14px;">
+              <tr>
+                <td style="color: #888780; padding: 8px 0; width: 120px;">Darček</td>
+                <td style="color: #1a1a18; padding: 8px 0; font-weight: 500;">${presentName}</td>
+              </tr>
+              <tr>
+                <td style="color: #888780; padding: 8px 0;">Obchod</td>
+                <td style="color: #1a1a18; padding: 8px 0;">${presentMall}</td>
+              </tr>
+              <tr>
+                <td style="color: #888780; padding: 8px 0;">Cena</td>
+                <td style="color: #1a1a18; padding: 8px 0;">${presentPrice} €</td>
+              </tr>
+            </table>
           </div>
+
+          <div style="margin-top: 28px;">
+            <a href="${presentLink}"
+              style="display: inline-block; background: #1a6fd4; color: #ffffff;
+                      padding: 10px 22px; border-radius: 6px; text-decoration: none;
+                      font-size: 14px; font-weight: 500;">
+              Kúpiť darček
+            </a>
+          </div>
+
+        </div>
         `,
       }),
     });

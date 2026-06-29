@@ -3,36 +3,44 @@ import { togglePresent } from "../../../../core/servises/PresentServices";
 import { PrimaryButton } from "../../Buttons/Buttons";
 import EmailInput from "../../Inputs/Inputs";
 
-const BindingReservationContentModal = ({id, currentChecked, setModalContentType, isModalOpen, setIsModalOpen}) => {
+const BindingReservationContentModal = ({id, currentChecked, setModalContentType, isModalOpen, setIsModalOpen, setFinalData}) => {
 
   const [email, setEmail] = useState("");
   const [emailIsValid, setEmailIsValid] = useState(false);
+  const [sendEmailError, setSendEmailError] = useState(false);
 
 const bindingReservePresent = async (id, currentChecked, setModalContentType, isModalOpen, setIsModalOpen) => {
   if (currentChecked === false) {
     togglePresent(id, currentChecked).then(async result => {
-      const { status, data } = result; // ← presentData musí vrátiť togglePresent
-
-      console.log(result.data.presentData);
-    //   const presentData = {name: 'DARCEK', link: 'LINK', mall: 'MALL', price: 'PRICE'}
+      const { status, data } = result;
 
       if (status === "OK") {
-        // Odoslanie emailu
+        setFinalData(data);
         try {
-          await fetch("/api/send-email", {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({
-              email,
-              presentName: data.presentData.name || "Bez mena: chyba!",
-              presentLink: data.presentData.link || "Bez linku: chyba!",
-              presentMall: data.presentData.mall || "Bez názvu obchodu: chyba!",
-              presentPrice: data.presentData.price || "Bez ceny: chyba!",
-            }),
+          const emailResponse =
+            await fetch("/api/send-email", {
+              method: "POST",
+              headers: { "Content-Type": "application/json" },
+              body: JSON.stringify({
+                email,
+                presentName: data.presentData.name || "Bez mena: chyba!",
+                presentLink: data.presentData.link || "Bez linku: chyba!",
+                presentMall: data.presentData.mall || "Bez názvu obchodu: chyba!",
+                presentPrice: data.presentData.price || "Bez ceny: chyba!",
+              }),
           });
+
+           if (!emailResponse.ok) {
+                  setModalContentType("okReservationEmailFail");
+                  if (!isModalOpen) setIsModalOpen(true);
+                  return;
+                }
         } catch (err) {
+
           console.error("Email sa nepodarilo odoslať:", err);
-          // Email zlyhá potichu — rezervácia je stále OK
+          setModalContentType("okReservationEmailFail");
+          if (!isModalOpen) setIsModalOpen(true);
+          return;
         }
 
         setModalContentType("okReservation");
@@ -52,7 +60,7 @@ const bindingReservePresent = async (id, currentChecked, setModalContentType, is
 
   return (
     <>
-        <h2>Vyplň prosím svoj email</h2>
+        <h4>Vyplň prosím svoj email</h4>
         <EmailInput setEmailIsValid={setEmailIsValid} setEmail={setEmail}/>
         <p className="u-small">Na tento email ti pošlem potvrdenie o&nbsp;záväznej rezervácii spolu s&nbsp;inštrukciami, pre&nbsp;jednoduchší nákup darčeka.</p>
         <PrimaryButton

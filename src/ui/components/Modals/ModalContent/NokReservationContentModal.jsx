@@ -6,7 +6,7 @@ const NokRezervationContentModal = ({onClose}) => {
     <>
       <TriangleAlertIcon specialClass={"u-modal-alert"} />
       <div>
-        <p>Ľutujem, niečo sa pokazilo.</p>
+        <h4>Ľutujem, niečo sa pokazilo.</h4>
         <p>Zopakuj svoju voľbu ešte raz.</p>
       </div>
       <PrimaryButton  text={"Zavrieť"} onClick={onClose}/>
