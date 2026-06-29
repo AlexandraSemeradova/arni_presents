@@ -1,0 +1,184 @@
+{
+  "arniPresents": [
+    {
+      "id": 1,
+      "name": "Drevená skladacia veža",
+      "mall": "KINDERO",
+      "link": "https://kidero.sk/produkt/230897-drevena-skladacia-veza-medved?utm_source=googleShopping&utm_medium=cpc&utm_campaign=kidero.sk_PMax_p&utm_group=6695800536&gad_source=1&gad_campaignid=23716278455&gbraid=0AAAAA9yjAZ0GfbPI3P8vgtjxc8Y9LBGyj&gclid=Cj0KCQjww8rQBhDjARIsAE43KPOt8TteRLii24dcDsvz5v60mcc_A0pzTAeX06rX_RVNZU0M65JhmkYaAo6BEALw_wcB",
+      "price": "11,90",
+      "img_path": "https://kidero.sk/media/cache/app_shop_product_large_thumbnail/4d/cf/ae4b2136f9a2423f72a0f5e03086.webp",
+      "isOnline": true,
+      "isChecked": false
+    },
+    {
+      "id": 2,
+      "name": "Železničná súprava",
+      "mall": "LIDL ONLINE",
+      "link": "https://www.lidl.sk/p/lupilu-drevena-zeleznicna-suprava-m/p100394864001?utm_source=google&utm_medium=cpc&utm_campaign=sho-sea_gen_base-all_notset_ao_ecm_shop_nf_sl_ao_gen-no&utm_content=196516778871&utm_term&cid=23600086559&gad_source=1&gad_campaignid=23600086559&gbraid=0AAAAACuLhJATHxb_UovgXwiLjthJ6wptj&gclid=Cj0KCQjww8rQBhDjARIsAE43KPMesMyJhuPXoOHlUuRD0z_KGdIrVQAqJTORSJvujT1j_NgPp3FYdGwaAiGUEALw_wcB",
+      "price": "21,99",
+      "img_path": "https://www.lidl.sk/assets/gcp337d6b37bc784902bec21a18f5a833de.jpg",
+      "isOnline": true,
+      "isChecked": false
+    },
+    {
+      "id": 3,
+      "name": "Guľočková dráha",
+      "mall": "BABY KNIHY",
+      "link": "https://babyknihy.sk/gulockova-draha-pre-najmensich-strom-pastel?currency=EUR&gad_source=1&gad_campaignid=22861729842&gbraid=0AAAAADhZSH4iO83qz26WhU_gQAmZxedvv&gclid=Cj0KCQjww8rQBhDjARIsAE43KPPS7z_jOvTGhBI9_dC3X0xM9L-QcrhfT1TThNVMCitD4n2j7AV9kpcaAsm7EALw_wcB",
+      "price": "18,90",
+      "img_path": "https://babyknihy.sk/image/cache/wp/gj/OC3-01-Product/01-Toys-and-Creative/Tooky/TK735N-1-550x550.webp",
+      "isOnline": true,
+      "isChecked": false
+    },
+    {
+      "id": 4,
+      "name": "Zieracie figúrky",
+      "mall": "KINDERO",
+      "link": "https://kidero.sk/produkt/221096-sada-zvieracich-figurok-kruzzel-v-kufriku-farma-safari-a-les-48-ks?utm_source=ehub&utm_medium=affiliate&ehub=b27535bef1784e72bba66e3b8c0af0c9",
+      "price": "20,50",
+      "img_path": "https://kidero.sk/media/cache/app_shop_product_large_thumbnail/98/90/c5e2cfc596583fe2f6b7fa10ef93.webp",
+      "isOnline": true,
+      "isChecked": false
+    },
+    {
+      "id": 5,
+      "name": "Hudobná súprava",
+      "mall": "ALZA",
+      "link": "https://www.alza.sk/hracky/hudobna-suprava-s-hrkalkami-d6312684.htm?kampan=adwhr_hracky_pla_rh-top_rh-top_c_9195588__HRAnk00045&gad_source=1&gad_campaignid=21251143827&gbraid=0AAAAAD2xsm5SVZ0Ng4_Ln8xbptrdtt7bL&gclid=Cj0KCQjwr4jSBhCSARIsAOX1E-JuA9XvuSYWypoLBk1jHuksRrTKIbsD5KEXSbzcCpoh-AnffYjdZcoaArCiEALw_wcB",
+      "price": "29,90",
+      "img_path": "https://image.alza.cz/products/HRAnk00045/HRAnk00045.jpg?width=500&height=500",
+      "isOnline": true,
+      "isChecked": false
+    },
+    {
+      "id": 6,
+      "name": "Rozprávky - Kniha",
+      "mall": "PRESKOLY",
+      "link": "https://www.preskoly.sk/p/817122-365-rozpravok-z-celeho-sveta/?utm_gfp=ZDJyMEV5M0xQd2lKM3Bib1JqOU90UWFvZ2xOek52VXFOenk4Qll6YWkyOHFycABkY2M1NzM3MjNkNDA4YWVhMGUyMjI2ZTUzNjU3ZWE1YjdmOTZhNjFi&gad_source=1&gad_campaignid=22574123254&gbraid=0AAAAADrZsJft9e-QfiqMMw1SIAFmE24N_&gclid=Cj0KCQjwr4jSBhCSARIsAOX1E-IqToQEBrt71tQNGow4H5WBqOjKkEsOGdjWPcD7JrQP7Wkjr-ub2gIaAsvCEALw_wcB",
+      "price": "11,48",
+      "img_path": "https://www.preskoly.sk/upload/stuff/resized/889508_600-600.jpg?_gl=1*6k7fx9*_up*MQ..*_gs*MQ..&gclid=Cj0KCQjwr4jSBhCSARIsAOX1E-IqToQEBrt71tQNGow4H5WBqOjKkEsOGdjWPcD7JrQP7Wkjr-ub2gIaAsvCEALw_wcB&gbraid=0AAAAADrZsJft9e-QfiqMMw1SIAFmE24N_",
+      "isOnline": true,
+      "isChecked": false
+    },
+    {
+      "id": 7,
+      "name": "Rozprávky - Leporelo",
+      "mall": "PRESKOLY",
+      "link": "https://www.preskoly.sk/p/975518-tvarovane-leporelo-rozpravky/?gad_source=1&gad_campaignid=21980641586&gbraid=0AAAAADrZsJes3nXpmrXVp-hjRNc0A3bOo&gclid=Cj0KCQjwr4jSBhCSARIsAOX1E-LkAf_e7VWWXib_OijPcMeaE5ItcToRWktjEyU2M0ikTGMP1y6ceOsaAjpmEALw_wcB",
+      "price": "5,93",
+      "img_path": "https://www.preskoly.sk/upload/stuff/resized/1188608_250-0.jpg",
+      "isOnline": true,
+      "isChecked": false
+    },
+     {
+      "id": 8,
+      "name": "LEGO - Duplo",
+      "mall": "ALZA",
+      "link": "https://www.alza.sk/hracky/lego-duplo-10913-box-s-kockami-d5745597.htm",
+      "price": "25,90",
+      "img_path": "https://image.alza.cz/products/LO10913/LO10913.jpg?width=500&height=500",
+      "isOnline": true,
+      "isChecked": false
+    },
+    {
+      "id": 9,
+      "name": "Odrážadlo",
+      "mall": "ALZA",
+      "link": "https://www.alza.sk/hracky/kinderkraft-cutie-blue-d12990134.htm?kampan=adwhr_hracky_pla_rh-top_rh-top_c_9195588__HRAls15566&gad_source=1&gad_campaignid=21251143827&gbraid=0AAAAAD2xsm4_WJDAiHazIdSF1Qol_73X3&gclid=Cj0KCQjww8rQBhDjARIsAE43KPOrChZw6kL_k-ygRvD6nRy-858T5-cb79AU7zhQwLRoZ-FjD4XYousaAqESEALw_wcB",
+      "price": "28,39",
+      "img_path": "https://image.alza.cz/products/HRAls15566/HRAls15566.jpg?width=500&height=500",
+      "isOnline": true,
+      "isChecked": false
+    },
+    {
+      "id": 10,
+      "name": "Senzorický chodník",
+      "mall": "4KIDS",
+      "link": "https://4kidspoint.sk/products/tickit-senzoricky-chodnik-pre-deti-sada-senzorickych-koliesok?srsltid=AfmBOorW7T_0r3WJKr5NvvZLX7vXQrudjqD7B2myE0-tf86FNUCo_rVt",
+      "price": "45,90",
+      "img_path": "https://4kidspoint.sk/cdn/shop/files/6_66d60511-cee6-4907-88d7-4d2d5d4e527f.jpg?v=1708017157",
+      "isOnline": true,
+      "isChecked": false
+    },
+    {
+      "id": 11,
+      "name": "Záhradný vozíček",
+      "mall": "KINDERO",
+      "link": "https://kidero.sk/produkt/268842-dreveny-montessori-zahradny-vozicek-so-zberom-mrkvy-tvarmi-a-magnetickymi-cervikmi?utm_source=googleShopping&utm_medium=cpc&utm_campaign=kidero.sk_PMax_p&utm_group=6695800536&gad_source=1&gad_campaignid=23716278455&gbraid=0AAAAA9yjAZ0lwDBOHZKIEwv3UyQnOXHZ8&gclid=Cj0KCQjwr4jSBhCSARIsAOX1E-LOXKO1CmtdFpBLcaVOnFlFTGLpuKgxZaEcZaR-c9NPBuKMgCm8rbkaAnXgEALw_wcB",
+      "price": "18,50",
+      "img_path": "https://kidero.sk/media/cache/sylius_shop_product_original/6d/c2/ee40028f720239770d1d67f496c7.webp",
+      "isOnline": true,
+      "isChecked": false
+    },
+    {
+      "id": 12,
+      "name": "Hracia deka",
+      "mall": "NOELO",
+      "link": "https://www.noelo.sk/noomad-outdoor-hracia-deka-a-vak-na-hracky-parc",
+      "price": "42,69",
+      "img_path": "https://www.noelo.sk/img/p/1024/45172-noomad-outdoor-hraci-deka-a-vak-na-hracky-parc-1.jpg",
+      "isOnline": true,
+      "isChecked": false
+    },
+    {
+      "id": 13,
+      "name": "Detský tunel",
+      "mall": "IKEA",
+      "link": "https://www.ikea.com/sk/sk/p/dvaergmas-detsky-tunel-modra-zelena-80528031/",
+      "price": "19,99",
+      "img_path": "https://www.ikea.com/sk/sk/images/products/dvaergmas-detsky-tunel-modra-zelena__1157487_pe887712_s5.jpg?f=xl",
+      "isOnline": true,
+      "isChecked": false
+    },
+    {
+      "id": 14,
+      "name": "Ťahací pes",
+      "mall": "RAJ HRACIEK",
+      "link": "https://www.rajhraciek.sk/cubika-13623-tahaci-pes-p242121",
+      "price": "14,25",
+      "img_path": "https://images-rajhraciek-cdn.rshop.sk/w634/products/bb6070966a50e176913f3284acf95438.jpg",
+      "isOnline": true,
+      "isChecked": false
+    },
+    {
+      "id": 15,
+      "name": "DM 🎁 karta 1",
+      "mall": "DM Drogerie",
+      "link": "https://www.mojadm.sk/services/sluzby-v-dm-predajniach/dm-darcekove-karty-371624#online",
+      "price": "10 – 200",
+      "img_path": "https://products.dm-static.com/images/f_auto,q_auto,c_fit,h_320,w_320/v1747407338/assets/pas/images/aaa38e30-9360-4f98-9841-9d4cd8f3dc65/dm-darcekova-karta-v-hodnote-10",
+      "isOnline": true,
+      "isChecked": false
+    },
+    {
+      "id": 16,
+      "name": "DM 🎁 karta 2",
+      "mall": "DM Drogerie",
+      "link": "https://www.mojadm.sk/services/sluzby-v-dm-predajniach/dm-darcekove-karty-371624#online",
+      "price": "10 – 200",
+      "img_path": "https://products.dm-static.com/images/f_auto,q_auto,c_fit,h_320,w_320/v1747407338/assets/pas/images/aaa38e30-9360-4f98-9841-9d4cd8f3dc65/dm-darcekova-karta-v-hodnote-10",
+      "isOnline": true,
+      "isChecked": false
+    },
+    {
+      "id": 17,
+      "name": "H&M 🎁 karta 1",
+      "mall": "DM Drogerie",
+      "link": "https://www2.hm.com/sk_sk/customer-service/gift-card.html?srsltid=AfmBOoo0P3J9uxPF0Hpcyj_UmN1ifu-f1pclY4QHbijgsJx9oAZJBWAN",
+      "price": "10 – 200",
+      "img_path": "https://i.colnect.net/f/711/886/HM_02.jpg",
+      "isOnline": false,
+      "isChecked": false
+    },
+    {
+      "id": 18,
+      "name": "H&M 🎁 karta 2",
+      "mall": "DM Drogerie",
+      "link": "https://www2.hm.com/sk_sk/customer-service/gift-card.html?srsltid=AfmBOoo0P3J9uxPF0Hpcyj_UmN1ifu-f1pclY4QHbijgsJx9oAZJBWAN",
+      "price": "10 – 200",
+      "img_path": "https://i.colnect.net/f/711/886/HM_02.jpg",
+      "isOnline": false,
+      "isChecked": false
+    }
+  ]
+}
