@@ -6,6 +6,7 @@ import BindingReservationContentModal from "./ModalContent/BindingReservationCon
 import OkReservationContentModal from "./ModalContent/OkReservationContentModal";
 import NokReservationContentModal from "./ModalContent/NokReservationContentModal";
 import OkReservationEmailFailContentModal from "./ModalContent/OkReservationEmailFailContentModal";
+import PresentSelectionAtFirstContentModal from "./ModalContent/PresentSelectionAtFirstContentModal"
 import "./Modal.css";
 
 const Modal = ({ id, isChecked, setModalContentType, setIsModalOpen, isModalOpen, onClose, contentType }) => {
@@ -46,6 +47,8 @@ const Modal = ({ id, isChecked, setModalContentType, setIsModalOpen, isModalOpen
           {contentType === "okReservationEmailFail" && (<OkReservationEmailFailContentModal onClose={onClose} finalData={finalData} />)}
           {/* Something Went Wrong - all bad */}
           {contentType === "nokReservation" && (<NokReservationContentModal onClose={onClose}/>)}
+          {/* At first, user have to pick a present to unblock link to store */}
+          {contentType === "presentSelectionAtFirst" && (<PresentSelectionAtFirstContentModal onClose={onClose}/>)}
       </div>
     </div>
   );

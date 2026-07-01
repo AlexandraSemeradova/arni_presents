@@ -1,0 +1,126 @@
+
+/* images */
+figure {
+  max-width: 250px;
+  min-width: 150px;
+}
+
+img {
+  width: 100%;
+}
+
+/* text style */
+.u-txt-green {
+  color: #0eb00e;
+}
+
+.u-bold {
+  font-weight: 600;
+}
+
+.u-italic {
+  font-style: italic;
+}
+
+.u-uppercase {
+ text-transform: uppercase;
+}
+
+.u-center {
+  text-align: center;
+}
+
+/* flex */
+.u-flex {
+  display: flex;
+}
+
+.u-fd-col {
+  flex-direction: column;
+}
+
+.u-jc-c {
+  justify-content: center;
+}
+
+.u-jc-e {
+  justify-content: end;
+}
+
+.u-ai-c {
+  align-items: center;
+}
+
+/* titles */
+h1 {
+  font-size: 1.8rem;
+  line-height: 2.7rem;
+  font-weight: 500;
+}
+
+h2 {
+  font-size: 1.2rem;
+  line-height: 1.6rem;
+  font-weight: 500;
+}
+
+h3 {
+  font-size: 1.6rem;
+  line-height: 2.4rem;
+  font-weight: 500;
+  margin-bottom: 0.2rem;
+}
+
+h4 {
+  font-size: 1.1rem;
+  line-height: 1.65rem;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+}
+
+h5 {
+  font-size: 0.9rem;
+  line-height: 1.35rem;
+  margin-bottom: .3rem;
+}
+
+.u-small {
+  font-size: 0.8rem;
+  line-height: 1.2rem;
+}
+
+/* gap/margin/padding */
+.u-gap {
+  gap: 1rem;
+}
+
+.u-padding {
+  padding: 1rem;
+}
+
+.u-margin {
+  margin: 1rem
+}
+
+.u-mt {
+  margin-top: 1rem
+}
+
+.u-mb-0_5 {
+  margin-bottom: .5rem;
+}
+
+.u-mb-2 {
+    margin-bottom: 2rem;
+}
+
+/* shadow */
+.u-shadow {
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+}
+
+/* rounded */
+.u-rounded {
+  border-radius: 1rem;
+}

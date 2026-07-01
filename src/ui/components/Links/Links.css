@@ -5,3 +5,12 @@
 .u-primaryLink:hover {
   color: #1554cc;
 }
+
+.u-like-link {
+  color: #1e6bff;
+  cursor: pointer;
+}
+
+.u-like-link:hover {
+  color: #1554cc;
+}

@@ -1,10 +1,12 @@
 import { useEffect, useState } from "react";
 import { subscribeToPresents } from "./core/servises/PresentServices";
 import Spiner from "./ui/components/Loaders/Spiner";
-import Modal from "./ui/components/Modals/Modal";
 import ErrorMessage from "./ui/components/ErrorMessages/ErrorMessage";
+import Introduction from "./ui/components/Texts/Introduction";
 import PresentList from "./ui/components/Lists/PresentList";
+import Modal from "./ui/components/Modals/Modal";
 import "./App.css";
+import "./Generic.css";
 
 export default function App() {
   const [selectedId, setSelectedId] = useState(null);
@@ -32,6 +34,7 @@ export default function App() {
       {(!isLoader && serverStatus === 'ERROR') && (<ErrorMessage />)}
       {(!isLoader && serverStatus !== 'ERROR') &&
         (<>
+          <Introduction />
           <PresentList
             allPresents={allPresents}
             setSelectedId={setSelectedId}

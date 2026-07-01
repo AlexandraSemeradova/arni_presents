@@ -52,8 +52,9 @@ const DetailContentModal = ({id, isChecked, setModalContentType, isModalOpen, se
               <div className="u-flex u-fd-col u-ai-c u-jc-c">
                 <h2 className="u-bold">{sName}</h2>
                 <p> Dostupné na:{" "}
-                  {sLink && <PrimaryLink link={sLink} target="_blank" rel="noopener noreferrer" specialClass="u-primaryLink" text={sMall} />}
-                  {!sLink && sMall}
+                  {(!sLink && sIsChecked===true) && "Nie je možné presmerovať na obchod."}
+                  {(sLink && sIsChecked===true) && <PrimaryLink link={sLink} target="_blank" rel="noopener noreferrer" specialClass="u-primaryLink" text={sMall} />}
+                  {(sLink && sIsChecked===false) && <span className="u-like-link" onClick={() => (setModalContentType("presentSelectionAtFirst"))}>{sMall}</span> }
                 </p>
               </div>
               {!sIsChecked && (
