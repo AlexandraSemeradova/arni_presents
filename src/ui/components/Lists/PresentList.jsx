@@ -43,11 +43,11 @@ const PresentList = ({
     };
 
     return (
-        <section>
+        <section className="u-padding-res u-xl-rounded u-bcg-white">
             <Toggle showOnlyFree={showOnlyFree} setShowOnlyFree={setShowOnlyFree}/>
             <div>
                 <ul className="u-pseudotable">
-                    <li>
+                    <li className="u-pseudotable-header">
                         <span className="u-cell u-cell-1">Názov</span>
                         <span className="u-cell u-cell-2">Detail</span>
                         <span className="u-cell u-cell-3">Cena</span>

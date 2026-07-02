@@ -12,6 +12,10 @@
   min-height: 3.5rem;
 }
 
+.u-pseudotable-header {
+    align-items: end;
+}
+
 .u-pseudotable li.u-status-true {
     opacity: 0.6;
     background: #e6e6e6;

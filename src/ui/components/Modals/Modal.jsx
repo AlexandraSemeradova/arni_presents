@@ -6,10 +6,21 @@ import BindingReservationContentModal from "./ModalContent/BindingReservationCon
 import OkReservationContentModal from "./ModalContent/OkReservationContentModal";
 import NokReservationContentModal from "./ModalContent/NokReservationContentModal";
 import OkReservationEmailFailContentModal from "./ModalContent/OkReservationEmailFailContentModal";
-import PresentSelectionAtFirstContentModal from "./ModalContent/PresentSelectionAtFirstContentModal"
+import PresentSelectionAtFirstContentModal from "./ModalContent/PresentSelectionAtFirstContentModal";
+import UserLimitReachedModalContent from "./ModalContent/UserLimitReachedModalContent";
 import "./Modal.css";
 
-const Modal = ({ id, isChecked, setModalContentType, setIsModalOpen, isModalOpen, onClose, contentType }) => {
+const Modal = ({
+  id,
+  isChecked,
+  data,
+  setByUserReservedPresents,
+  setModalContentType,
+  setIsModalOpen,
+  isModalOpen,
+  onClose,
+  contentType
+}) => {
   if (!isModalOpen) return null;
 
   const [finalData, setFinalData] = useState({});
@@ -33,6 +44,8 @@ const Modal = ({ id, isChecked, setModalContentType, setIsModalOpen, isModalOpen
             (<BindingReservationContentModal
                 id={id}
                 currentChecked={isChecked}
+                data={data}
+                setByUserReservedPresents={setByUserReservedPresents}
                 setModalContentType={setModalContentType}
                 isModalOpen={isModalOpen}
                 setIsModalOpen={setIsModalOpen}
@@ -49,6 +62,8 @@ const Modal = ({ id, isChecked, setModalContentType, setIsModalOpen, isModalOpen
           {contentType === "nokReservation" && (<NokReservationContentModal onClose={onClose}/>)}
           {/* At first, user have to pick a present to unblock link to store */}
           {contentType === "presentSelectionAtFirst" && (<PresentSelectionAtFirstContentModal onClose={onClose}/>)}
+          {/* User reached a present limit */}
+          {contentType === "userLimitReachedModalContent" && (<UserLimitReachedModalContent onClose={onClose}/>)}
       </div>
     </div>
   );

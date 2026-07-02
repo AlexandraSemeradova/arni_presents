@@ -1,11 +1,6 @@
 const Introduction = () => {
   return (
-    <div className="u-mb-2">
-
-        <header className="u-mb-0_5">
-            <h1>WishList pre Arnolda</h1>
-        </header>
-
+    <div className="u-mb-2 u-p-1_5 u-xl-rounded u-bcg-white">
         <section className="u-mb-0_5">
           <p>Milá rodina a kamoši, <span className="u-bold">25. júl 2026</span> sa blíži a veľmi sa na vás tešíme 🎉🥳!</p>
         </section>
@@ -22,7 +17,6 @@ const Introduction = () => {
         <section className="u-mb-0_5">
           <p>Ak vám nič nesadne, darčekové karty z <span className="u-italic">dm-ky</span> alebo <span className="u-italic">H&M</span> vždy potešia.</p>
         </section>
-
     </div>
   );
 }

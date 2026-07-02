@@ -116,7 +116,8 @@ export async function updatePresent(id, data) {
   }
 }
 
-export async function togglePresent(id, isChecked) {
+//TOGGLE
+export async function togglePresent(id, isChecked, email) {
   try {
     const presentRef = ref(db, `arniPresents/${id - 1}`);
 
@@ -125,6 +126,7 @@ export async function togglePresent(id, isChecked) {
 
     await update(presentRef, {
       isChecked: !isChecked,
+      reservedByEmail: email,
     });
 
     return {

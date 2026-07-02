@@ -1,4 +1,4 @@
-import { Info, TriangleAlert, Unplug, CircleCheckBig, ImageOff } from "lucide-react";
+import { Info, TriangleAlert, Unplug, CircleCheckBig, ImageOff, LayoutList } from "lucide-react";
 import "./Icons.css";
 
 export const InfoIcon = ({specialClass}) => {
@@ -40,3 +40,11 @@ export const NoImageIcon = ({specialClass}) => {
     </>
   );
 }
+export const ListIcon = ({specialClass}) => {
+  return (
+    <>
+      <LayoutList className={`u-list-icon ${specialClass || ""}`} />
+    </>
+  );
+}
+

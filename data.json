@@ -8,7 +8,8 @@
       "price": "11,90",
       "img_path": "https://kidero.sk/media/cache/app_shop_product_large_thumbnail/4d/cf/ae4b2136f9a2423f72a0f5e03086.webp",
       "isOnline": true,
-      "isChecked": false
+      "isChecked": false,
+      "reservedByEmail": ""
     },
     {
       "id": 2,
@@ -18,7 +19,8 @@
       "price": "21,99",
       "img_path": "https://www.lidl.sk/assets/gcp337d6b37bc784902bec21a18f5a833de.jpg",
       "isOnline": true,
-      "isChecked": false
+      "isChecked": false,
+      "reservedByEmail": ""
     },
     {
       "id": 3,
@@ -28,7 +30,8 @@
       "price": "18,90",
       "img_path": "https://babyknihy.sk/image/cache/wp/gj/OC3-01-Product/01-Toys-and-Creative/Tooky/TK735N-1-550x550.webp",
       "isOnline": true,
-      "isChecked": false
+      "isChecked": false,
+      "reservedByEmail": ""
     },
     {
       "id": 4,
@@ -38,7 +41,8 @@
       "price": "20,50",
       "img_path": "https://kidero.sk/media/cache/app_shop_product_large_thumbnail/98/90/c5e2cfc596583fe2f6b7fa10ef93.webp",
       "isOnline": true,
-      "isChecked": false
+      "isChecked": false,
+      "reservedByEmail": ""
     },
     {
       "id": 5,
@@ -48,7 +52,8 @@
       "price": "29,90",
       "img_path": "https://image.alza.cz/products/HRAnk00045/HRAnk00045.jpg?width=500&height=500",
       "isOnline": true,
-      "isChecked": false
+      "isChecked": false,
+      "reservedByEmail": ""
     },
     {
       "id": 6,
@@ -58,7 +63,8 @@
       "price": "11,48",
       "img_path": "https://www.preskoly.sk/upload/stuff/resized/889508_600-600.jpg?_gl=1*6k7fx9*_up*MQ..*_gs*MQ..&gclid=Cj0KCQjwr4jSBhCSARIsAOX1E-IqToQEBrt71tQNGow4H5WBqOjKkEsOGdjWPcD7JrQP7Wkjr-ub2gIaAsvCEALw_wcB&gbraid=0AAAAADrZsJft9e-QfiqMMw1SIAFmE24N_",
       "isOnline": true,
-      "isChecked": false
+      "isChecked": false,
+      "reservedByEmail": ""
     },
     {
       "id": 7,
@@ -68,7 +74,8 @@
       "price": "5,93",
       "img_path": "https://www.preskoly.sk/upload/stuff/resized/1188608_250-0.jpg",
       "isOnline": true,
-      "isChecked": false
+      "isChecked": false,
+      "reservedByEmail": ""
     },
      {
       "id": 8,
@@ -78,7 +85,8 @@
       "price": "25,90",
       "img_path": "https://image.alza.cz/products/LO10913/LO10913.jpg?width=500&height=500",
       "isOnline": true,
-      "isChecked": false
+      "isChecked": false,
+      "reservedByEmail": ""
     },
     {
       "id": 9,
@@ -88,7 +96,8 @@
       "price": "28,39",
       "img_path": "https://image.alza.cz/products/HRAls15566/HRAls15566.jpg?width=500&height=500",
       "isOnline": true,
-      "isChecked": false
+      "isChecked": false,
+      "reservedByEmail": ""
     },
     {
       "id": 10,
@@ -98,7 +107,8 @@
       "price": "45,90",
       "img_path": "https://4kidspoint.sk/cdn/shop/files/6_66d60511-cee6-4907-88d7-4d2d5d4e527f.jpg?v=1708017157",
       "isOnline": true,
-      "isChecked": false
+      "isChecked": false,
+      "reservedByEmail": ""
     },
     {
       "id": 11,
@@ -108,7 +118,8 @@
       "price": "18,50",
       "img_path": "https://kidero.sk/media/cache/sylius_shop_product_original/6d/c2/ee40028f720239770d1d67f496c7.webp",
       "isOnline": true,
-      "isChecked": false
+      "isChecked": false,
+      "reservedByEmail": ""
     },
     {
       "id": 12,
@@ -118,7 +129,8 @@
       "price": "42,69",
       "img_path": "https://www.noelo.sk/img/p/1024/45172-noomad-outdoor-hraci-deka-a-vak-na-hracky-parc-1.jpg",
       "isOnline": true,
-      "isChecked": false
+      "isChecked": false,
+      "reservedByEmail": ""
     },
     {
       "id": 13,
@@ -128,7 +140,8 @@
       "price": "19,99",
       "img_path": "https://www.ikea.com/sk/sk/images/products/dvaergmas-detsky-tunel-modra-zelena__1157487_pe887712_s5.jpg?f=xl",
       "isOnline": true,
-      "isChecked": false
+      "isChecked": false,
+      "reservedByEmail": ""
     },
     {
       "id": 14,
@@ -138,7 +151,8 @@
       "price": "14,25",
       "img_path": "https://images-rajhraciek-cdn.rshop.sk/w634/products/bb6070966a50e176913f3284acf95438.jpg",
       "isOnline": true,
-      "isChecked": false
+      "isChecked": false,
+      "reservedByEmail": ""
     },
     {
       "id": 15,
@@ -148,7 +162,8 @@
       "price": "10 – 200",
       "img_path": "https://products.dm-static.com/images/f_auto,q_auto,c_fit,h_320,w_320/v1747407338/assets/pas/images/aaa38e30-9360-4f98-9841-9d4cd8f3dc65/dm-darcekova-karta-v-hodnote-10",
       "isOnline": true,
-      "isChecked": false
+      "isChecked": false,
+      "reservedByEmail": ""
     },
     {
       "id": 16,
@@ -158,7 +173,8 @@
       "price": "10 – 200",
       "img_path": "https://products.dm-static.com/images/f_auto,q_auto,c_fit,h_320,w_320/v1747407338/assets/pas/images/aaa38e30-9360-4f98-9841-9d4cd8f3dc65/dm-darcekova-karta-v-hodnote-10",
       "isOnline": true,
-      "isChecked": false
+      "isChecked": false,
+      "reservedByEmail": ""
     },
     {
       "id": 17,
@@ -168,7 +184,8 @@
       "price": "10 – 200",
       "img_path": "https://i.colnect.net/f/711/886/HM_02.jpg",
       "isOnline": false,
-      "isChecked": false
+      "isChecked": false,
+      "reservedByEmail": ""
     },
     {
       "id": 18,
@@ -178,7 +195,8 @@
       "price": "10 – 200",
       "img_path": "https://i.colnect.net/f/711/886/HM_02.jpg",
       "isOnline": false,
-      "isChecked": false
+      "isChecked": false,
+      "reservedByEmail": ""
     }
   ]
 }

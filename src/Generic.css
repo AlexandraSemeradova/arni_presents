@@ -1,4 +1,7 @@
-
+/* background */
+.u-bcg-white {
+  background: #fff;
+}
 /* images */
 figure {
   max-width: 250px;
@@ -90,17 +93,42 @@ h5 {
   line-height: 1.2rem;
 }
 
-/* gap/margin/padding */
+/* gaps */
 .u-gap {
   gap: 1rem;
 }
 
+/* paddings */
 .u-padding {
   padding: 1rem;
 }
 
+@media (min-width: 450px) {
+  .u-padding-res {
+    padding: 1rem;
+  }
+}
+
+.u-p-1_5 {
+  padding: 1.5rem;
+}
+
+.u-p-2 {
+  padding: 2rem;
+}
+
+/* magrins */
 .u-margin {
-  margin: 1rem
+  margin: 1rem;
+}
+
+.u-m-2 {
+  margin: 2rem;
+}
+
+.u-my-2 {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
 }
 
 .u-mt {
@@ -111,8 +139,12 @@ h5 {
   margin-bottom: .5rem;
 }
 
+.u-mb-1 {
+  margin-bottom: 1rem;
+}
+
 .u-mb-2 {
-    margin-bottom: 2rem;
+  margin-bottom: 2rem;
 }
 
 /* shadow */
@@ -123,4 +155,8 @@ h5 {
 /* rounded */
 .u-rounded {
   border-radius: 1rem;
+}
+
+.u-xl-rounded {
+  border-radius: 2rem;
 }

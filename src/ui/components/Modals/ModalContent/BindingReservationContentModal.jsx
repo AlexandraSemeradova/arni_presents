@@ -3,15 +3,40 @@ import { togglePresent } from "../../../../core/servises/PresentServices";
 import { PrimaryButton } from "../../Buttons/Buttons";
 import EmailInput from "../../Inputs/Inputs";
 
-const BindingReservationContentModal = ({id, currentChecked, setModalContentType, isModalOpen, setIsModalOpen, setFinalData}) => {
+const BindingReservationContentModal = ({
+  id,
+  currentChecked,
+  data,
+  byUserReservedPresents,
+  setByUserReservedPresents,
+  setModalContentType,
+  isModalOpen,
+  setIsModalOpen,
+  setFinalData
+}) => {
 
   const [email, setEmail] = useState("");
   const [emailIsValid, setEmailIsValid] = useState(false);
   const [sendEmailError, setSendEmailError] = useState(false);
 
-const bindingReservePresent = async (id, currentChecked, setModalContentType, isModalOpen, setIsModalOpen) => {
+const bindingReservePresent = async (id, currentChecked, setByUserReservedPresents, setModalContentType, isModalOpen, setIsModalOpen) => {
   if (currentChecked === false) {
-    togglePresent(id, currentChecked).then(async result => {
+    // console.log(data);
+
+    const reservedByUser = data.filter(d => d.reservedByEmail === email);
+    console.log('reservedByUser');
+    console.log(reservedByUser);
+    
+    setByUserReservedPresents(reservedByUser);
+
+
+    if (reservedByUser.length > 2) {
+      setModalContentType("userLimitReachedModalContent");
+      if (!isModalOpen) setIsModalOpen(true);
+       return;
+    }
+
+    togglePresent(id, currentChecked, email).then(async result => {
       const { status, data } = result;
 
       if (status === "OK") {
@@ -65,7 +90,7 @@ const bindingReservePresent = async (id, currentChecked, setModalContentType, is
         <p className="u-small">Na tento email ti pošlem potvrdenie o&nbsp;záväznej rezervácii spolu s&nbsp;inštrukciami, pre&nbsp;jednoduchší nákup darčeka.</p>
         <PrimaryButton
           text={"Záväzne rezervovať"}
-          onClick={() => bindingReservePresent(id, currentChecked, setModalContentType, isModalOpen, setIsModalOpen, email)}
+          onClick={() => bindingReservePresent(id, currentChecked, setByUserReservedPresents, setModalContentType, isModalOpen, setIsModalOpen, email)}
           disabled={!emailIsValid}
           />
     </>

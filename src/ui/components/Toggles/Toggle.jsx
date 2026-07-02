@@ -10,8 +10,8 @@ export const IOSToggle = ({showOnlyFree, setShowOnlyFree}) => {
 
 export const Toggle = ({showOnlyFree, setShowOnlyFree}) => {
   return (
-    <div className="u-flex u-jc-e">
-      <span style={{ marginRight: "10px" }}>Iba voľné</span>
+    <div className="u-flex u-jc-e u-padding">
+      <span style={{ marginRight: "10px" }}>Zobraziť iba voľné</span>
       <IOSToggle showOnlyFree={showOnlyFree} setShowOnlyFree={setShowOnlyFree} />
     </div>
   );
