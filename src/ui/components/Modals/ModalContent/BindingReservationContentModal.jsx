@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { togglePresent } from "../../../../core/servises/PresentServices";
 import { PrimaryButton } from "../../Buttons/Buttons";
-import EmailInput from "../../Inputs/Inputs";
+import EmailInput from "../../Inputs/EmailInput";
 
 const BindingReservationContentModal = ({
   id,
@@ -19,74 +19,82 @@ const BindingReservationContentModal = ({
   const [emailIsValid, setEmailIsValid] = useState(false);
   const [sendEmailError, setSendEmailError] = useState(false);
 
-const bindingReservePresent = async (id, currentChecked, setByUserReservedPresents, setModalContentType, isModalOpen, setIsModalOpen) => {
-  if (currentChecked === false) {
-    // console.log(data);
+  const handleEmail = (email, { isValid }) => {
+    setEmail(email);
+    setEmailIsValid(isValid);
+  }
 
-    const reservedByUser = data.filter(d => d.reservedByEmail === email);
-    console.log('reservedByUser');
-    console.log(reservedByUser);
-    
-    setByUserReservedPresents(reservedByUser);
+  const bindingReservePresent = async (
+    id,
+    currentChecked,
+    setByUserReservedPresents,
+    setModalContentType,
+    isModalOpen,
+    setIsModalOpen) => {
+    if (currentChecked === false) {
 
+      const reservedByUser = data.filter(d => d.reservedByEmail === email);
+      setByUserReservedPresents(reservedByUser);
 
-    if (reservedByUser.length > 2) {
-      setModalContentType("userLimitReachedModalContent");
-      if (!isModalOpen) setIsModalOpen(true);
-       return;
-    }
+      if (reservedByUser.length > 2) {
+        setModalContentType("userLimitReachedModalContent");
+        if (!isModalOpen) setIsModalOpen(true);
+        return;
+      }
 
-    togglePresent(id, currentChecked, email).then(async result => {
-      const { status, data } = result;
+      togglePresent(id, currentChecked, email).then(async result => {
+        const { status, data } = result;
 
-      if (status === "OK") {
-        setFinalData(data);
-        try {
-          const emailResponse =
-            await fetch("/api/send-email", {
-              method: "POST",
-              headers: { "Content-Type": "application/json" },
-              body: JSON.stringify({
-                email,
-                presentName: data.presentData.name || "Bez mena: chyba!",
-                presentLink: data.presentData.link || "Bez linku: chyba!",
-                presentMall: data.presentData.mall || "Bez názvu obchodu: chyba!",
-                presentPrice: data.presentData.price || "Bez ceny: chyba!",
-              }),
-          });
+        if (status === "OK") {
+          setFinalData(data);
+          try {
+            const emailResponse =
+              await fetch("/api/send-email", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({
+                  email,
+                  presentName: data.presentData.name || "Bez mena: chyba!",
+                  presentLink: data.presentData.link || "Bez linku: chyba!",
+                  presentMall: data.presentData.mall || "Bez názvu obchodu: chyba!",
+                  presentPrice: data.presentData.price || "Bez ceny: chyba!",
+                }),
+            });
 
-           if (!emailResponse.ok) {
-                  setModalContentType("okReservationEmailFail");
-                  if (!isModalOpen) setIsModalOpen(true);
-                  return;
-                }
-        } catch (err) {
+            if (!emailResponse.ok) {
+                    setModalContentType("okReservationEmailFail");
+                    if (!isModalOpen) setIsModalOpen(true);
+                    return;
+                  }
+          } catch (err) {
 
-          console.error("Email sa nepodarilo odoslať:", err);
-          setModalContentType("okReservationEmailFail");
+            console.error("Email sa nepodarilo odoslať:", err);
+            setModalContentType("okReservationEmailFail");
+            if (!isModalOpen) setIsModalOpen(true);
+            return;
+          }
+
+          setModalContentType("okReservation");
           if (!isModalOpen) setIsModalOpen(true);
-          return;
         }
 
-        setModalContentType("okReservation");
-        if (!isModalOpen) setIsModalOpen(true);
-      }
-
-      if (status === "ERROR") {
-        setModalContentType("nokReservation");
-        if (!isModalOpen) setIsModalOpen(true);
-      }
-    });
-  } else {
-    setModalContentType("alreadyReserved");
-    if (!isModalOpen) setIsModalOpen(true);
-  }
-};
+        if (status === "ERROR") {
+          setModalContentType("nokReservation");
+          if (!isModalOpen) setIsModalOpen(true);
+        }
+      });
+    } else {
+      setModalContentType("alreadyReserved");
+      if (!isModalOpen) setIsModalOpen(true);
+    }
+  };
 
   return (
     <>
         <h4>Vyplň prosím svoj email</h4>
-        <EmailInput setEmailIsValid={setEmailIsValid} setEmail={setEmail}/>
+        {/* <EmailInput setEmailIsValid={setEmailIsValid} setEmail={setEmail}/> */}
+        
+        <EmailInput onChange={handleEmail} label="" />
         <p className="u-small">Na tento email ti pošlem potvrdenie o&nbsp;záväznej rezervácii spolu s&nbsp;inštrukciami, pre&nbsp;jednoduchší nákup darčeka.</p>
         <PrimaryButton
           text={"Záväzne rezervovať"}

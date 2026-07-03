@@ -6,6 +6,8 @@ function EmailInput({ onChange, setEmailIsValid, setEmail }) {
   const [value, setValue] = useState("");
   const [error, setError] = useState("");
 
+  console.log(value);
+
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
 
   const handleChange = (e) => {
