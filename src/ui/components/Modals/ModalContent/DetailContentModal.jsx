@@ -14,6 +14,8 @@ const DetailContentModal = ({id, isChecked, setModalContentType, isModalOpen, se
   const [serverStatusModal, setServerStatusModal] = useState(null);
   const [isModalLoader, setIsModalLoader] = useState(true);
 
+  console.log('bol som tu');
+
    useEffect(() => {
     const unsubscribe = subscribeToPresentById(id, (result) => {
       const {status, data} = result;
@@ -51,9 +53,9 @@ const DetailContentModal = ({id, isChecked, setModalContentType, isModalOpen, se
               </figure>
               <div className="u-flex u-fd-col u-ai-c u-jc-c">
                 <h2 className="u-bold">{sName}</h2>
-                <p> Dostupné na:{" "}
+                <p>Kúpiť na:{" "}
                   {(!sLink && sIsChecked===true) && "Nie je možné presmerovať na obchod."}
-                  {(sLink && sIsChecked===true) && <PrimaryLink link={sLink} target="_blank" rel="noopener noreferrer" specialClass="u-primaryLink" text={sMall} />}
+                  {(sLink && sIsChecked===true) && <PrimaryLink link={sLink} target="_blank" rel="noopener noreferrer" text={sMall} />}
                   {(sLink && sIsChecked===false) && <span className="u-like-link" onClick={() => (setModalContentType("presentSelectionAtFirst"))}>{sMall}</span> }
                 </p>
               </div>

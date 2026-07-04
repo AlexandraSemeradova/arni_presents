@@ -26,6 +26,7 @@ const BindingReservationContentModal = ({
 
   const bindingReservePresent = async (
     id,
+    data,
     currentChecked,
     setByUserReservedPresents,
     setModalContentType,
@@ -92,13 +93,11 @@ const BindingReservationContentModal = ({
   return (
     <>
         <h4>Vyplň prosím svoj email</h4>
-        {/* <EmailInput setEmailIsValid={setEmailIsValid} setEmail={setEmail}/> */}
-        
-        <EmailInput onChange={handleEmail} label="" />
+        <EmailInput onChange={handleEmail} label="" value={email} name="email" />
         <p className="u-small">Na tento email ti pošlem potvrdenie o&nbsp;záväznej rezervácii spolu s&nbsp;inštrukciami, pre&nbsp;jednoduchší nákup darčeka.</p>
         <PrimaryButton
           text={"Záväzne rezervovať"}
-          onClick={() => bindingReservePresent(id, currentChecked, setByUserReservedPresents, setModalContentType, isModalOpen, setIsModalOpen, email)}
+          onClick={() => bindingReservePresent(id, data, currentChecked, setByUserReservedPresents, setModalContentType, isModalOpen, setIsModalOpen, email)}
           disabled={!emailIsValid}
           />
     </>

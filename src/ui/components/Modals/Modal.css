@@ -20,6 +20,9 @@
     text-align: center;
     animation: fadeIn 0.25s ease-out;
 }
+.u-modal > *:not(:last-child) {
+    margin-bottom: 1rem
+}
 
 .u-close-btn  {
     position: absolute;

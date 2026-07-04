@@ -33,6 +33,7 @@
 
 .u-pseudotable .u-cell-2 {
     min-width: 50px;
+    justify-content: center;
 }
 
 .u-pseudotable .u-cell-3 {
@@ -46,3 +47,14 @@
 .u-pseudotable .u-cell-5 {
     min-width: 80px;
 }
+
+.u-filters {
+    padding: 1rem;
+}
+
+@media (min-width: 450px) {
+  .u-filters  {
+    padding: 0rem;
+  }
+}
+

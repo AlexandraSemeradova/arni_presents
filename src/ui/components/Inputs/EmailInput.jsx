@@ -1,16 +1,20 @@
-import { useState } from "react";
+import { useState, useId } from "react";
 import { normalizeEmail } from "../../../utils/helpers";
 import "./Inputs.css";
 
 const EmailInput = ({
   label = "Email",
+  name,
   placeholder = "napr. john.doe@gmail.com",
-  defaultValue = "",
+  value = "",
   onChange,
-  validate = true, // možnosť vypnúť validáciu
+  validate = true,
+  autoComplete = "email",
 }) => {
-  const [value, setValue] = useState(defaultValue);
-  const [error, setError] = useState("");
+  const [touched, setTouched] = useState(false);
+
+  const inputId = useId();
+  const errorId = `${inputId}-error`;
 
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
 
@@ -19,52 +23,42 @@ const EmailInput = ({
     if (!cleaned) return { isValid: false, error: "Email je povinný." };
     if (cleaned.length > 254) return { isValid: false, error: "Email je príliš dlhý." };
     if (!emailRegex.test(cleaned)) return { isValid: false, error: "Zadaj platný email." };
-
     return { isValid: true, error: "" };
   };
+
+  const cleaned = normalizeEmail(value);
+  const { isValid, error } = runValidation(cleaned);
 
   const handleChange = (e) => {
     const raw = e.target.value;
     const cleaned = normalizeEmail(raw);
+    const result = runValidation(cleaned);
 
-    setValue(raw);
-
-    const { isValid, error } = runValidation(cleaned);
-    setError(error);
-
-    onChange?.(cleaned, { isValid, error });
-  };
-
-  const handleBlur = () => {
-    const cleaned = normalizeEmail(value);
-    setValue(cleaned);
-
-    const { isValid, error } = runValidation(cleaned);
-    setError(error);
-
-    onChange?.(cleaned, { isValid, error });
+    onChange?.(cleaned, result);
   };
 
   return (
     <div className="u-input-wrapper">
-      {label && <label htmlFor="email">{label}</label>}
+      {label && <label htmlFor={inputId}>{label}</label>}
 
       <input
-        id="email"
+        id={inputId}
         type="email"
         inputMode="email"
-        autoComplete="email"
+        autoComplete={autoComplete}
         placeholder={placeholder}
         value={value}
         onChange={handleChange}
-        onBlur={handleBlur}
-        aria-invalid={!!error}
-        aria-describedby={error ? "u-email-error" : undefined}
+        onBlur={() => setTouched(true)}
+        aria-invalid={touched && !!error}
+        aria-describedby={touched && error ? errorId : undefined}
       />
 
-      {error && <span id="u-email-error">{error}</span>}
+      {touched && error && (
+        <span id={errorId} className="u-error-input">{error}</span>
+      )}
     </div>
   );
-}
+};
 
 export default EmailInput;

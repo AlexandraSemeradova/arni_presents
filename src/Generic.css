@@ -12,6 +12,11 @@ img {
   width: 100%;
 }
 
+/* sections */
+section {
+  min-width: 320px;
+}
+
 /* text style */
 .u-txt-green {
   color: #0eb00e;
@@ -46,12 +51,27 @@ img {
   justify-content: center;
 }
 
+.u-jc-sb {
+  justify-content: space-between;
+}
+
 .u-jc-e {
   justify-content: end;
 }
 
 .u-ai-c {
   align-items: center;
+}
+.u-ai-e {
+  align-items: end;
+}
+
+.u-fw-w {
+  flex-wrap: wrap;
+}
+
+.u-fw-wr {
+  flex-wrap: wrap-reverse;
 }
 
 /* titles */
@@ -95,6 +115,9 @@ h5 {
 
 /* gaps */
 .u-gap {
+  gap: 1rem;
+}
+.u-gap-2 {
   gap: 1rem;
 }
 

@@ -27,7 +27,7 @@ const Modal = ({
 
   return (
     <div className="u-modal-overlay">
-      <div className="u-modal u-flex u-gap u-fd-col u-ai-c u-jc-c">
+      <div className="u-modal">
         <button className="u-close-btn" onClick={onClose}>×</button>
           {/* Detail about a present + reserve button */}
           {contentType === "detail" &&

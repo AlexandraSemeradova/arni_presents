@@ -1,6 +1,7 @@
 html {
   font-size: 16px;
   background: #e8eaec;
+  min-width: 320px;
 }
 
 * {
