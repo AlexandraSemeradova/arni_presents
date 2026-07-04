@@ -13,7 +13,7 @@ const Introduction = () => {
 
         <div className="u-mb-0_5">
           <p>Ak však nechcete prísť s prázdnymi rukami 👐🎁, pripravila som zoznam vecí, ktoré Arni ešte nemá a určite ho potešia.</p>
-          <p>Vyberte si darčeky (najviac však dva) cez tlačidlo <span className="u-bold">Vybrať</span>, aby sme <span className="u-bold">predišli duplicitám</span> 🔖.</p>
+          <p>Vyberte si darček/-y (najviac však dva) cez tlačidlo <span className="u-bold">Vybrať</span>, aby sme <span className="u-bold">predišli duplicitám</span> 🔖.</p>
         </div>
 
         <div className="u-mb-0_5">
