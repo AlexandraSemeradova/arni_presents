@@ -8,7 +8,7 @@ const OkRezervationContentModal = ({onClose, finalData}) => {
       <div>
         <h4 className="u-bold">Rezervácia prebehla úspešne</h4>
         <p>Na tvoj email prave prišli podrobné inštrukcie k rezervácii.</p>
-        <p>Ak emil nevidíš v Inboxe, pozri záložku <span className="u-bold">Všetky správy</span> aj <span className="u-bold">Spam</span>.</p>
+        <p>Ak email nevidíš v Inboxe, pozri záložku <span className="u-bold">Všetky správy</span> aj <span className="u-bold">Spam</span>.</p>
       </div>
       
       <div> 
