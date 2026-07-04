@@ -20,8 +20,14 @@
     text-align: center;
     animation: fadeIn 0.25s ease-out;
 }
+
 .u-modal > *:not(:last-child) {
     margin-bottom: 1rem
+}
+
+.u-modal p {
+    font-size: .9rem;
+    line-height: 1.35rem;
 }
 
 .u-close-btn  {

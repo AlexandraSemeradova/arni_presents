@@ -102,7 +102,7 @@ const BindingReservationContentModal = ({
         name="email"
       />
 
-      <p className="u-small">
+      <p>
         Na tento email ti pošlem potvrdenie o&nbsp;záväznej rezervácii spolu
         s&nbsp;inštrukciami, pre&nbsp;jednoduchší nákup darčeka.
       </p>
